@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
             if (state is HomeLoaded) {
               return Center(
                 child: Text(
-                  'Halo, ${state.user.email}',
+                  'Halo, ${state.user.name}',
                   style: const TextStyle(fontSize: 18),
                 ),
               );

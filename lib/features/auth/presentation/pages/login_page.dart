@@ -56,7 +56,6 @@ class LoginPage extends StatelessWidget {
                   if (context.mounted) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
-                        width: 90.0,
                         content: const Text(
                           'Login Succesfull.',
                         ),
