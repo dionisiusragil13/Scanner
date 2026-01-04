@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "800165777440",
+    "project_id": "scanner-2249e",
+    "storage_bucket": "scanner-2249e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800165777440:android:58445060bcc9059f862c45",
+        "android_client_info": {
+          "package_name": "com.example.scanner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDB1JcnpZE0UH5UxSn4KYhq8kgSTorGY38"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
