@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:scanner/features/auth/presentation/pages/auth_page.dart';
 import 'package:scanner/features/auth/presentation/pages/login_page.dart';
 
 import 'package:scanner/features/onboarding/controller/onboarding_model.dart';
-import 'package:scanner/features/onboarding/presentation/widgets/transparent_button.dart';
-import 'package:scanner/features/onboarding/presentation/widgets/white_button.dart';
+import 'package:scanner/core/widgets/transparent_button.dart';
+import 'package:scanner/core/widgets/white_button.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
@@ -58,7 +59,7 @@ class _OnboardingPage extends State<OnboardingPage> {
                       Text(
                         data.title,
                         textAlign: TextAlign.center,
-                        style: TextStyle(),
+                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
                       ),
                     ],
                   ),
@@ -78,8 +79,16 @@ class _OnboardingPage extends State<OnboardingPage> {
                   ),
                 ),
                 const SizedBox(height: 40),
-                WhiteButton(text: "Get Started", onPressed: () {}),
-                SizedBox(height: 20.0,),
+                WhiteButton(
+                  text: "Get Started",
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => AuthPage()),
+                    );
+                  },
+                ),
+                SizedBox(height: 20.0),
                 TransparentButton(
                   text: "Login",
                   onPressed: () {

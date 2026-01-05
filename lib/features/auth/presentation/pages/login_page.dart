@@ -7,7 +7,7 @@ import 'package:scanner/features/auth/presentation/widgets/account_decider.dart'
 import 'package:scanner/features/auth/presentation/widgets/custom_button.dart';
 import 'package:scanner/features/auth/presentation/widgets/custom_password_field.dart';
 import 'package:scanner/features/auth/presentation/widgets/custom_text_field.dart';
-import 'package:scanner/features/home/presentation/pages/home_page.dart';
+import 'package:scanner/features/navigation/presentation/pages/main_page.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -28,8 +28,8 @@ class LoginPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: CustomTextField(
-              label: "Name",
-              hint: "John doe",
+              label: "Email",
+              hint: "Johndoe@gmail.com",
               controller: emailController,
             ),
           ),
@@ -71,7 +71,7 @@ class LoginPage extends StatelessWidget {
                     );
                     Navigator.pushAndRemoveUntil(
                       context,
-                      MaterialPageRoute(builder: (context) => HomePage()),
+                      MaterialPageRoute(builder: (context) => MainPage()),
                       (route) => false,
                     );
                   }
