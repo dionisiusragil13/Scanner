@@ -4,6 +4,7 @@ import 'package:scanner/core/di/injection_container.dart';
 import 'package:scanner/features/home/presentation/bloc/home_bloc.dart';
 import 'package:scanner/features/home/presentation/bloc/home_event.dart';
 import 'package:scanner/features/home/presentation/bloc/home_state.dart';
+import 'package:scanner/features/reminder/presentation/pages/task_component.dart';
 
 
 class HomePage extends StatelessWidget {
@@ -34,7 +35,7 @@ class HomePage extends StatelessWidget {
               return Center(child: Text(state.message));
             }
 
-            return const SizedBox();
+            return TaskComponent();
           },
         ),
       ),

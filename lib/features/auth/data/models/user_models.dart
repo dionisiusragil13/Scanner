@@ -1,7 +1,5 @@
 import 'package:scanner/features/auth/domain/entities/user_entity.dart';
-
 class UserModels extends UserEntity{
-
 
   UserModels({
     required super.id,

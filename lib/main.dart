@@ -2,7 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:scanner/core/di/injection_container.dart';
-import 'package:scanner/features/onboarding/presentation/pages/onboarding_page.dart';
+import 'package:scanner/features/decider/presentation/pages/page_decider.dart';
+import 'package:scanner/features/home/presentation/pages/home_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: OnboardingPage(),
+      home: HomePage(),
     );
   }
 }
