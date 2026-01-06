@@ -34,7 +34,18 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
   }
 
   Future<void> _onLoadTasks(LoadTasks event, Emitter<TaskState> emit) async {
-    try {} catch (e) {
+    try {
+      emit(TaskLoading());
+      final user = await getCurrentUser();
+
+      if (user == null) {
+        emit(TaskError("User not loged in"));
+        return;
+      }
+
+      final task = await getAllTaskUseCase(user.id);
+      emit(TaskLoaded(task));
+    } catch (e) {
       emit(TaskError(e.toString()));
     }
   }
@@ -79,7 +90,18 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
     DeleteTaskEvent event,
     Emitter<TaskState> emit,
   ) async {
-    try {} catch (e) {
+    try {
+      final user = await getCurrentUser();
+
+      if (user == null) {
+        emit(TaskError('user Not Logged in'));
+      }
+
+      await deleteTaskUseCase(user!.id, event.id);
+
+      final tasks = await getAllTaskUseCase(user.id);
+      emit(TaskLoaded(tasks));
+    } catch (e) {
       emit(TaskError(e.toString()));
     }
   }
