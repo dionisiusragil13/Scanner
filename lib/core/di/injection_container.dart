@@ -20,6 +20,7 @@ import 'package:scanner/features/reminder/domain/usecase/delete_task_use_case.da
 import 'package:scanner/features/reminder/domain/usecase/get_all_task_use_case.dart';
 import 'package:scanner/features/reminder/domain/usecase/toggle_star_task_use_case.dart';
 import 'package:scanner/features/reminder/presentation/bloc/task_bloc.dart';
+import 'package:scanner/features/reminder/presentation/bloc/task_event.dart';
 
 final sl = GetIt.instance;
 
@@ -61,6 +62,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => DeleteTaskUseCase(sl()));
   sl.registerLazySingleton(() => ToggleStarTaskUseCase(sl()));
   sl.registerLazySingleton(() => CompletedTaskUseCase(sl()));
+  sl.registerLazySingleton(() => LoadTasks());
 
   /// ============================
   /// BLOC
@@ -70,14 +72,14 @@ Future<void> init() async {
 
   //task
   sl.registerFactory(
-  () => TaskBloc(
-    loadTasks: sl(),
-    getCurrentUser: sl(),
-    addTaskUseCase: sl(),
-    getAllTaskUseCase: sl(),
-    deleteTaskUseCase: sl(),
-    toggleStarTaskUseCase: sl(),
-    completedTaskUseCase: sl(),
-  ),
-);
+    () => TaskBloc(
+      loadTasks: sl(),
+      getCurrentUser: sl(),
+      addTaskUseCase: sl(),
+      getAllTaskUseCase: sl(),
+      deleteTaskUseCase: sl(),
+      toggleStarTaskUseCase: sl(),
+      completedTaskUseCase: sl(),
+    ),
+  );
 }
